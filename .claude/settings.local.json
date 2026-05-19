@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm dev:*)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(pnpm add:*)",
+      "Read(//Applications/**)",
+      "Bash(trae:*)",
+      "mcp__playwright__browser_tabs",
+      "mcp__playwright__browser_snapshot",
+      "Bash(npx hyperframes:*)",
+      "Bash(echo \"EXIT: $?\")",
+      "mcp__playwright__browser_evaluate",
+      "Bash(echo \"exit: $?\")"
+    ]
+  }
+}

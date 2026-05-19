@@ -1,0 +1,37 @@
+#app {
+  min-height: 100vh;
+}
+
+.error-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 16px;
+  text-align: center;
+
+  p {
+    margin-bottom: 16px;
+    color: @text-color-secondary;
+  }
+
+  button {
+    padding: 8px 24px;
+    background: @primary-color;
+    color: #fff;
+    border: none;
+    border-radius: @border-radius-base;
+    font-size: @font-size-base;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}

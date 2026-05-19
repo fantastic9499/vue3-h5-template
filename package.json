@@ -1,0 +1,67 @@
+{
+  "name": "vue3-h5-template",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:staging": "vite --mode staging",
+    "build:develop": "vite build --mode development",
+    "build:testing": "vite build --mode staging",
+    "build:product": "vite build --mode production",
+    "preview": "vite preview",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --write \"src/**/*.{ts,vue,less,json}\"",
+    "type-check": "vue-tsc --noEmit",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.less": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@vueuse/core": "~10.7.0",
+    "axios": "~1.7.0",
+    "pinia": "~3.0.4",
+    "pinia-plugin-persistedstate": "~4.7.1",
+    "vant": "~4.9.0",
+    "vue": "~3.5.0",
+    "vue-request": "~2.0.0",
+    "vue-router": "~4.5.0",
+    "zod": "~3.24.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-conventional": "^19.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@vant/auto-import-resolver": "^1.3.0",
+    "@vitejs/plugin-legacy": "^8.0.0",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "autoprefixer": "^10.4.0",
+    "commitlint": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^10.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^9.30.0",
+    "husky": "^9.0.0",
+    "less": "^4.2.0",
+    "lint-staged": "^15.0.0",
+    "postcss-px-to-viewport-8-plugin": "^1.2.0",
+    "prettier": "^3.0.0",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "typescript": "^5.7.0",
+    "unplugin-auto-import": "^21.0.0",
+    "unplugin-vue-components": "^28.0.0",
+    "vite": "^8.0.0",
+    "vite-plugin-compression2": "^2.5.0",
+    "vue-eslint-parser": "^9.4.0",
+    "vue-tsc": "^2.2.0"
+  }
+}
