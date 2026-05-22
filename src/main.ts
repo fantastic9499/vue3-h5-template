@@ -5,12 +5,10 @@ import '@/styles/reset.less';
 import '@/styles/theme.less';
 import { createPinia } from 'pinia';
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
+import 'vant/lib/toast/style';
 import { createApp } from 'vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
 import App from './App.vue';
-
-const a = 1;
-console.log(a);
 
 const app = createApp(App);
 

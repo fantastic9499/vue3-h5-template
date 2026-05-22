@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="not-found">
     <h2>404</h2>
@@ -7,3 +5,5 @@
     <router-link to="/">返回首页</router-link>
   </div>
 </template>
+
+<script setup lang="ts"></script>

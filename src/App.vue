@@ -1,3 +1,7 @@
+<template>
+  <AppLayout />
+</template>
+
 <script setup lang="ts">
 import { onErrorCaptured, onUnmounted, ref } from 'vue';
 import AppLayout from '@/layouts/AppLayout.vue';
@@ -34,7 +38,3 @@ onErrorCaptured((err) => {
   return false;
 });
 </script>
-
-<template>
-  <AppLayout />
-</template>

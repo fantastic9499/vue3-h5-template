@@ -41,3 +41,55 @@ Skills 位于 `.claude/skills/` 目录，每个 skill 有独立的 `SKILL.md` �
 
 如果你认为哪怕只有 1% 的可能性某个 skill 适用于你正在做的事情，你必须调用该 skill 检查。
 <!-- superpowers-zh:end -->
+
+## Vue 3 H5 项目核心规则
+
+以下规则在所有开发场景中始终生效，Claude Code 写每一行代码时都必须遵守。
+
+### 一、TypeScript 铁律
+
+- 全部代码严格使用 TypeScript，**禁止 `any`**，**禁止 `.js` 业务文件**
+- 所有组件使用 `<script setup lang="ts">`
+- **禁止** Options API，**禁止** `defineComponent()` 对象写法
+
+### 二、SFC 块顺序
+
+所有 `.vue` 文件块顺序必须为 **`<template>` → `<script setup>` → `<style>`**
+
+### 三、组件目录组织
+
+- 组件必须按组件名单独建目录，不要平铺在 `components/` 下
+- 目录命名用组件名本身，如 `HomeHeader/`、`BottomTabBar/`
+- 组件实现文件统一命名 `index.vue`
+- 样式文件统一命名 `index.module.less`
+- 页面级组件和全局公共组件统一遵守
+
+### 四、TypeScript 接口命名
+
+- 所有接口定义必须以大写字母 **`I`** 开头
+- 适用于所有 `interface`（Props、类型定义、API 响应等）
+
+### 五、事件函数命名
+
+- 所有事件函数必须以 **`on`** 开头
+- **禁止** `handle` 前缀
+
+### 六、样式方案
+
+- 业务样式使用 **Less + CSS Modules**（`.module.less`）
+- 组件内通过 `import styles from './index.module.less'` 引入
+- 模板中使用 `:class="styles.xxx"` 绑定
+
+### 七、技术栈清单
+
+Vue 3.5 + TypeScript 5 + Vite 8 + Vant 4 + Pinia 3 + Vue Router 4 + vue-request + @vueuse/core + Less + CSS Modules + Axios
+
+### 八、组件命名
+
+- 需要缓存的页面组件必须通过 `defineOptions({ name: 'XxxPage' })` 显式声明组件名
+
+### 九、Composable 抽取原则
+
+- 组件内逻辑超过 3 个 `ref`/`watch`/`computed` 时，按职责拆分 Composable
+- 命名语义化：`useAuth`、`useInfiniteScroll`
+- 通用能力优先用 `@vueuse/core`

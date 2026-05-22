@@ -1,0 +1,86 @@
+.hero {
+  position: relative;
+  padding: 22px 16px 18px;
+  color: #fff;
+  background: linear-gradient(180deg, #2f6fe5 0%, #4b86f7 45%, #5a95ff 100%);
+}
+
+.heroBgDecor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(255, 255, 255, 0.14) 0, rgba(255, 255, 255, 0) 46%),
+    radial-gradient(circle at 60% 38%, rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0) 50%),
+    radial-gradient(circle at 92% 44%, rgba(255, 255, 255, 0.08) 0, rgba(255, 255, 255, 0) 52%);
+}
+
+.heroInner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+}
+
+.userInfo {
+  min-width: 0;
+}
+
+.userName {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dateCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  //   background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.dateDay {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.dateMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12px;
+  opacity: 0.92;
+}
+
+.dateMonth,
+.dateWeekday {
+  line-height: 1.2;
+  white-space: nowrap;
+}

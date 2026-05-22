@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "vite",
     "dev:staging": "vite --mode staging",
+    "start:develop": "vite --mode development",
+    "start:testing": "vite --mode staging",
+    "start:product": "vite --mode production",
     "build:develop": "vite build --mode development",
     "build:testing": "vite build --mode staging",
     "build:product": "vite build --mode production",
@@ -26,7 +29,9 @@
     ]
   },
   "dependencies": {
+    "@alova/adapter-axios": "^2.0.18",
     "@vueuse/core": "~10.7.0",
+    "alova": "^3.5.1",
     "axios": "~1.7.0",
     "pinia": "~3.0.4",
     "pinia-plugin-persistedstate": "~4.7.1",

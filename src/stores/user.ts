@@ -1,32 +1,41 @@
+/*
+ * @Author: TuXunJia
+ * @Date: 2026-05-19 17:08:49
+ * @LastEditors: TuXunJia
+ * @LastEditTime: 2026-05-22 16:58:52
+ */
+import type { IMobileUser } from '@/types';
 import { defineStore } from 'pinia';
-import { ref, computed } from 'vue';
+import { computed, ref } from 'vue';
 
 export const useUserStore = defineStore(
   'user',
   () => {
-    const token = ref<string | null>(null);
-    const userName = ref('');
-    const userCode = ref('');
+    const user = ref<IMobileUser | null>(null);
+    const isLoggedIn = computed(() => !!user.value);
 
-    const isLoggedIn = computed(() => !!token.value);
+    const setUser = (newUser: IMobileUser): void => {
+      user.value = newUser;
+    };
 
-    function setUserInfo(newToken: string, newUserName: string, newUserCode: string): void {
-      token.value = newToken;
-      userName.value = newUserName;
-      userCode.value = newUserCode;
-    }
-
-    function logout(): void {
-      token.value = null;
-      userName.value = '';
-      userCode.value = '';
-    }
-
-    return { token, userName, userCode, isLoggedIn, setUserInfo, logout };
+    const logout = (): void => {
+      user.value = null;
+    };
+    return { user, isLoggedIn, logout, setUser };
   },
   {
+    // persist: true,
     persist: {
-      pick: ['token', 'userName', 'userCode'],
+      debug: true,
+      //   pick: ['user.token'],
+      pick: ['user'],
+      beforeHydrate(ctx) {
+        console.log('beforeHydrate:', ctx);
+      },
+      afterHydrate(ctx) {
+        ctx.store.user.token = 1;
+        console.log('afterHydrate:', ctx.store.user);
+      },
     },
   },
 );

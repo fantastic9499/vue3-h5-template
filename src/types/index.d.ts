@@ -1,5 +1,5 @@
 /** 用户信息 */
-interface IUser {
+export interface IUser {
   id: string;
   name: string;
   code: string;
@@ -8,21 +8,37 @@ interface IUser {
 }
 
 /** 登录参数 */
-interface ILoginParams {
+export interface ILoginParams {
   username: string;
   password: string;
 }
 
 /** 登录结果 */
-interface ILoginResult {
+export interface ILoginResult {
   token: string;
   userName: string;
   userCode: string;
 }
 
 /** 通用 API 响应结构 */
-interface IApiResponse<T = unknown> {
+export interface IApiResponse<T = unknown> {
   code: number;
   data: T;
   message: string;
+}
+
+export interface IMobileUser {
+  id: string;
+  name: string;
+  userNo: string;
+  token: string;
+  loginName: string;
+  departmentId: string;
+  departmentName: string;
+  userRole: number;
+  accessSource: number;
+  post: string;
+  edifactCompanyName: string;
+  changeUser: boolean;
+  nameWithDepartment: string;
 }

@@ -1,3 +1,11 @@
+<template>
+  <picture>
+    <source :srcset="optimizedSrc" type="image/webp" />
+    <source :srcset="src" type="image/jpeg" />
+    <img :src="optimizedSrc" :loading="lazy ? 'lazy' : 'eager'" @error="onImgError" alt="" />
+  </picture>
+</template>
+
 <script setup lang="ts">
 import { computed } from 'vue';
 
@@ -27,11 +35,3 @@ const onImgError = (e: Event): void => {
   }
 };
 </script>
-
-<template>
-  <picture>
-    <source :srcset="optimizedSrc" type="image/webp" />
-    <source :srcset="src" type="image/jpeg" />
-    <img :src="optimizedSrc" :loading="lazy ? 'lazy' : 'eager'" @error="onImgError" alt="" />
-  </picture>
-</template>
