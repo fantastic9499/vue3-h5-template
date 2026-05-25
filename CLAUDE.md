@@ -1,3 +1,5 @@
+> **宪法引用：** 本项目遵循 [CONSTITUTION.md](./CONSTITUTION.md) 定义的开发宪法。宪法效力高于本文件中的所有规则。当本文件与宪法冲突时，以宪法为准。
+
 <!-- superpowers-zh:begin (do not edit between these markers) -->
 # Superpowers-ZH 中文增强版
 
@@ -48,9 +50,10 @@ Skills 位于 `.claude/skills/` 目录，每个 skill 有独立的 `SKILL.md` �
 
 ### 一、TypeScript 铁律
 
-- 全部代码严格使用 TypeScript，**禁止 `any`**，**禁止 `.js` 业务文件**
+- 全部代码严格使用 TypeScript，**禁止 `.js` 业务文件**
 - 所有组件使用 `<script setup lang="ts">`
 - **禁止** Options API，**禁止** `defineComponent()` 对象写法
+- 注：禁止 `any` 的规则由宪法第三条 3.1 款约束
 
 ### 二、SFC 块顺序
 
@@ -90,6 +93,5 @@ Vue 3.5 + TypeScript 5 + Vite 8 + Vant 4 + Pinia 3 + Vue Router 4 + vue-request 
 
 ### 九、Composable 抽取原则
 
-- 组件内逻辑超过 3 个 `ref`/`watch`/`computed` 时，按职责拆分 Composable
-- 命名语义化：`useAuth`、`useInfiniteScroll`
-- 通用能力优先用 `@vueuse/core`
+- 注：逻辑拆分与工具库复用原则由宪法第五条 5.1、5.2 款约束
+- Vue 项目中的具体体现：逻辑复用函数即 Composable，通用工具库即 `@vueuse/core`
