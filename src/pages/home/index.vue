@@ -2,12 +2,12 @@
  * @Author: TuXunJia
  * @Date: 2026-05-21 11:06:47
  * @LastEditors: TuXunJia
- * @LastEditTime: 2026-05-22 16:51:26
+ * @LastEditTime: 2026-05-25 15:32:52
 -->
 <template>
   <div :class="styles.page">
     <template v-if="activeTab === 0">
-      <HomeHero :name="mockData.name" :date="mockData.date" />
+      <HomeHero :name="user?.name ?? ''" :date="mockData.date" />
 
       <main :class="styles.content">
         <HomeAppSection title="我的应用" :items="mockData.apps" @item-click="onAppItemClick" />
@@ -68,5 +68,5 @@ const onAnnouncementClick = (): void => {};
 
 const activeTab = ref(0);
 
-useLogin();
+const { user } = useLogin();
 </script>
