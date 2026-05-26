@@ -26,5 +26,8 @@ Thumbs.db
 npm-debug.log*
 pnpm-debug.log*
 
+# Claude Code local settings
+.claude/settings.local.json
+
 # Auto-generated
 components.d.ts
